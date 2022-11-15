@@ -2,7 +2,6 @@ if (
     ["admin"].includes(
         process.env.npm_config_section
     )
-    || true
 ) {
     require(`${__dirname}/webpack.admin.mix.js`);
     // require(`${__dirname}/webpack.${process.env.npm_config_section}.mix.js`);

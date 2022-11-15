@@ -1,18 +1,23 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite",
+        "dev": "npm run development",
+        "development": "mix",
         "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "build": "vite build",
+        "lint": "eslint ./resources/js",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./resources/js/.prettierrc",
         "dev-admin": "npm --section=admin run dev",
-        "watch-admin": "npm run watch ",
-        "watch-admin-mix": "npx mix",
+        "watch-admin": "npm run watch --section=admin ",
         "dev-all": "npm --section=admin run dev && npm --section=factory run dev && npm --section=warehouse run dev &&  npm --section=transporter run dev",
         "watch-all": "npm --section=admin run watch && npm --section=factory run watch && npm --section=warehouse run watch && npm --section=transporter run watch",
         "watch-mix": "npx --section=admin mix && npx --section=factory mix && npx --section=warehouse mix && npx --section=transporter mix",
-        "prod-all": "npm --section=admin run prod && npm --section=factory run prod && npm --section=warehouse run prod && npm --section=transporter run prod"
+        "prod-all": "npm --section=admin run prod && npm --section=factory run prod && npm --section=warehouse run prod && npm --section=transporter run prod",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.18.6",
